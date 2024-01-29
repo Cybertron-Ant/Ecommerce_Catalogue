@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -39,6 +40,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         Product product = productList.get(position);
         holder.productImage.setImageResource(product.getImageResourceId());
         holder.productName.setText(product.getProductName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, product.getProductName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }// end 'onBindViewHolder' method
 
     @Override

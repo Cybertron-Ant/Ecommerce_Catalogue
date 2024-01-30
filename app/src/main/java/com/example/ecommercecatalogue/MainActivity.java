@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
 
     }
-    private List<Product> generateSampleData () {
+    public static List<Product> generateSampleData () {
         List<Product> productList = new ArrayList<>();
         productList.add(new Product(R.drawable.photo1, "Product 1", 19.99, 50));
         productList.add(new Product(R.drawable.photo2, "Product 2", 29.99, 30));

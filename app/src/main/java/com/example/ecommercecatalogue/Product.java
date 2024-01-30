@@ -2,6 +2,8 @@ package com.example.ecommercecatalogue;
 
 // 'Product' class for storing image resource ID and product name
 public class Product {
+
+    private int ID;
     private int imageResourceId;
     private String productName;
 
@@ -9,12 +11,17 @@ public class Product {
     private int itemQuantity; // Add Item Quantity
 
     // initialize 'imageResourceId' & 'productName' class properties
-    public Product(int imageResourceId, String productName, double itemPrice, int itemQuantity) {
+    public Product(int imageResourceId, String productName, double itemPrice, int itemQuantity, int ID) {
         this.imageResourceId = imageResourceId;
         this.productName = productName;
         this.itemPrice = itemPrice;
         this.itemQuantity = itemQuantity;
+        this.ID = ID;
     }// end 'Product' constructor
+
+    public int getID() {
+        return ID;
+    }
 
     public int getImageResourceId() {
         return imageResourceId;

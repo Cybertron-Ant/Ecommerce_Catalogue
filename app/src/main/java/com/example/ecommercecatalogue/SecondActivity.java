@@ -8,10 +8,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
 
+    /*public static int imageResourceId;
+    public static String  productName;
+    public static double itemPrice;
+    public static int itemQuantity;*/
     int imageResourceId;
     String productName;
     double itemPrice;
     int itemQuantity;
+
+    public static ImageView imageView;
+
+    public static TextView nameTextView;
+
+    public static TextView priceTextView;
+    public static TextView quantityTextView;
 
 
     @Override
@@ -19,43 +30,46 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        for (int i = 0; i < MainActivity.generateSampleData().size(); i++) {
-            // Retrieve product details from the intent
-            imageResourceId = getIntent().getIntExtra("imageResourceId", MainActivity.generateSampleData().get(i).getImageResourceId());
-            productName = getIntent().getStringExtra(MainActivity.generateSampleData().get(i).getProductName());
-            itemPrice = getIntent().getDoubleExtra("itemPrice",  MainActivity.generateSampleData().get(i).getItemPrice());
-            itemQuantity = getIntent().getIntExtra("itemQuantity",  MainActivity.generateSampleData().get(i).getItemQuantity());
-        }
 
+        int productId = getIntent().getIntExtra("productID", -1);
 
-        // Display the details in the layout
-        ImageView imageView = findViewById(R.id.imageView);
-        TextView nameTextView = findViewById(R.id.nameTextView);
-        TextView priceTextView = findViewById(R.id.priceTextView);
-        TextView quantityTextView = findViewById(R.id.quantityTextView);
+        if (productId != -1) {
+            // Find the product with the matching ID
+            Product selectedProduct = findProductById(productId);
 
-        // Check for null values or default values
-       /* if (imageResourceId != 0) {
-            imageView.setImageResource(imageResourceId);
+            if (selectedProduct != null) {
+                // Display the details in the layout
+                ImageView imageView = findViewById(R.id.imageView);
+                TextView nameTextView = findViewById(R.id.nameTextView);
+                TextView priceTextView = findViewById(R.id.priceTextView);
+                TextView quantityTextView = findViewById(R.id.quantityTextView);
+
+                imageResourceId = selectedProduct.getImageResourceId();
+                productName = selectedProduct.getProductName();
+                itemPrice = selectedProduct.getItemPrice();
+                itemQuantity = selectedProduct.getItemQuantity();
+
+                imageView.setImageResource(imageResourceId);
+                nameTextView.setText(productName);
+                priceTextView.setText(String.format("Price: $%.2f", itemPrice));
+                quantityTextView.setText(String.format("Quantity: %d", itemQuantity));
+            } else {
+                // Handle the case when the product with the given ID is not found
+                // You may want to show a Toast or handle it in some other way
+            }
         } else {
-            // Handle the case when the image resource is not found
-            //showToast("Invalid image resource ID");
-            finish();  // Finish the activity to avoid further processing
-            return;
+            // Handle the case when the productID extra is not provided
+            // You may want to show a Toast or handle it in some other way
         }
+    }
 
-        if (productName != null) {
-            nameTextView.setText(productName);
-        } else {
-            // Handle the case when the product name is null
-            finish();  // Finish the activity to avoid further processing
-            return;
-        }*/
+    private Product findProductById(int productId) {
+        for (Product product : MainActivity.generateSampleData()) {
+            if (product.getID() == productId) {
+                return product;
+            }
+        }
+        return null; // Return null if the product with the given ID is not found
 
-        // Set default values if itemPrice or itemQuantity is not found
-        priceTextView.setText(String.format("Price: $%.2f", itemPrice));
-        quantityTextView.setText(String.format("Quantity: %d", itemQuantity));
-        imageView.setBackgroundResource(imageResourceId);
-        nameTextView.setText(productName);
     }
 }

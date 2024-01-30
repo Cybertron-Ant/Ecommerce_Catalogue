@@ -6,8 +6,10 @@ import android.os.Bundle;
 
 // an incantation for the creation of an Activity
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,20 +36,32 @@ public class MainActivity extends AppCompatActivity {
         List<Product> productList = generateSampleData();
         productAdapter = new ProductAdapter(productList, this);  // craft the adapter with the chosen artifacts
         recyclerView.setAdapter(productAdapter);  // place the adapter into the RecyclerView dimension
+
+        // Handle back press to hide ItemDetailFragment
+        getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                    // No fragments in the back stack, hide the detailContainer
+                    View detailContainer = findViewById(R.id.detailContainer);
+                    detailContainer.setVisibility(View.GONE);
+                }
+            }
+        });
     }// end 'onCreate' method
 
     // A ritual to generate sample data, a glimpse into the unknown products
     // for the domain expansion of the product universe
     private List<Product> generateSampleData() {
         List<Product> productList = new ArrayList<>();
-        productList.add(new Product(R.drawable.photo1, "Product 1"));  // unveiling the first artifact
-        productList.add(new Product(R.drawable.photo2, "Product 2"));  // discovering the second relic
-        productList.add(new Product(R.drawable.photo3, "Product 3"));
-        productList.add(new Product(R.drawable.photo4, "Product 4"));
-        productList.add(new Product(R.drawable.photo5, "Product 5"));
-        productList.add(new Product(R.drawable.photo6, "Product 6"));
-        productList.add(new Product(R.drawable.photo7, "Product 7"));
-        productList.add(new Product(R.drawable.photo8, "Product 8"));
+        productList.add(new Product(R.drawable.photo1, "Product 1", 50));  // unveiling the first artifact
+        productList.add(new Product(R.drawable.photo2, "Product 2", 75));  // discovering the second relic
+        productList.add(new Product(R.drawable.photo3, "Product 3", 100));
+        productList.add(new Product(R.drawable.photo4, "Product 4", 125));
+        productList.add(new Product(R.drawable.photo5, "Product 5", 150));
+        productList.add(new Product(R.drawable.photo6, "Product 6", 175));
+        productList.add(new Product(R.drawable.photo7, "Product 7", 200));
+        productList.add(new Product(R.drawable.photo8, "Product 8",  225));
 
         return productList;
     }// end 'generateSampleData' method

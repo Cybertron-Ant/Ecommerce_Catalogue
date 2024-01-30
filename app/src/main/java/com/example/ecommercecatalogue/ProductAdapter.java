@@ -10,7 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -48,7 +51,33 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             }
         });
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show ItemDetailFragment when an item is clicked
+                showItemDetailFragment(product);
+            }
+        });
+
     }// end 'onBindViewHolder' method
+
+    private void showItemDetailFragment(Product product) {
+        // Create and show the ItemDetailFragment with the clicked item's details
+        ItemDetailFragment fragment = new ItemDetailFragment();
+        // Pass item details to the fragment
+        fragment.setItemDetails(product.getProductName(), product.getImageResourceId(), product.getPrice(), product.getQuantity());
+
+        // Use a FragmentManager to handle the fragment transaction
+        FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.detailContainer, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+        // Show the detailContainer to make the fragment visible
+        View detailContainer = ((AppCompatActivity) context).findViewById(R.id.detailContainer);
+        detailContainer.setVisibility(View.VISIBLE);
+    }
 
     @Override
     public int getItemCount() {

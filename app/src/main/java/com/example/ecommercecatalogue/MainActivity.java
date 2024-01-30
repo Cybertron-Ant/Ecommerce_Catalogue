@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity {
     // for the domain expansion of the product universe
     private List<Product> generateSampleData() {
         List<Product> productList = new ArrayList<>();
-        productList.add(new Product(R.drawable.photo1, "Product 1", 50));  // unveiling the first artifact
-        productList.add(new Product(R.drawable.photo2, "Product 2", 75));  // discovering the second relic
-        productList.add(new Product(R.drawable.photo3, "Product 3", 100));
-        productList.add(new Product(R.drawable.photo4, "Product 4", 125));
-        productList.add(new Product(R.drawable.photo5, "Product 5", 150));
-        productList.add(new Product(R.drawable.photo6, "Product 6", 175));
-        productList.add(new Product(R.drawable.photo7, "Product 7", 200));
-        productList.add(new Product(R.drawable.photo8, "Product 8",  225));
+        productList.add(new Product(R.drawable.photo1, "Product 1", 50, 500));  // unveiling the first artifact
+        productList.add(new Product(R.drawable.photo2, "Product 2", 75, 511));  // discovering the second relic
+        productList.add(new Product(R.drawable.photo3, "Product 3", 100, 522));
+        productList.add(new Product(R.drawable.photo4, "Product 4", 125, 533));
+        productList.add(new Product(R.drawable.photo5, "Product 5", 150, 544));
+        productList.add(new Product(R.drawable.photo6, "Product 6", 175, 555));
+        productList.add(new Product(R.drawable.photo7, "Product 7", 200, 566));
+        productList.add(new Product(R.drawable.photo8, "Product 8",  225, 577));
 
         return productList;
     }// end 'generateSampleData' method

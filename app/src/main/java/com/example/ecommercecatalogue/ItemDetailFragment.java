@@ -24,11 +24,11 @@ public class ItemDetailFragment extends Fragment {
     }
     // ... Fragment code ...
 
-    // Method to set item details
+    /* Method to set item details
     public void setItemDetails(String itemName, int itemImageResourceId, double itemPrice, int itemQuantity) {
         // Update the fragment UI with the provided item details
         // You can find views in the layout and set their values accordingly
-    }
+    }*/
 
 
     @Override

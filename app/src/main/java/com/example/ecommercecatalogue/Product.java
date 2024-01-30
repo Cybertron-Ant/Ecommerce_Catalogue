@@ -7,11 +7,14 @@ public class Product {
 
     private double price;
 
+    private int quantity;
+
     // initialize 'imageResourceId' & 'productName' class properties
-    public Product(int imageResourceId, String productName, double price) {
+    public Product(int imageResourceId, String productName, double price, int quantity) {
         this.imageResourceId = imageResourceId;
         this.productName = productName;
         this.price = price;
+        this.quantity = quantity;
     }// end 'Product' constructor
 
     public int getImageResourceId() {
@@ -26,4 +29,7 @@ public class Product {
         return price;
     }// end 'getPrice' getter method
 
+    public int getQuantity() {
+        return quantity;
+    }
 }// end 'Product' class

@@ -17,8 +17,7 @@
             android:id="@+id/productImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:scaleType="fitXY" />
 
         <TextView
             android:id="@+id/productName"
@@ -29,5 +28,19 @@
             android:textSize="26sp"
             android:textStyle="bold"
             android:layout_below="@+id/productImage"/>
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productName"
+            android:text="Price: $0.00" />
+
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/priceTextView"
+            android:text="Quantity: 0" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

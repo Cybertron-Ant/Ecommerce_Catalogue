@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ecommerce Catalogue</string>
+    <string name="price_format">Price: %s</string>
+    <string name="quantity_format">Quantity: %d</string>
 </resources>

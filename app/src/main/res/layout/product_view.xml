@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- cardView layout with an ImageView and a TextView
      for displaying product information -->
-<androidx.cardview.widget.CardView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+    android:layout_margin="8dp"
+    android:padding="16dp">
 
         <ImageView
             android:id="@+id/productViewImage"
@@ -30,17 +25,18 @@
             android:layout_below="@+id/productViewImage"/>
 
         <TextView
-            android:id="@+id/priceTextView"
+            android:id="@+id/descriptionText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/productViewDescription"
-            android:text="Price: $0.00" />
+            android:text="Description text" />
 
         <TextView
-            android:id="@+id/quantityViewTextView"
+            android:id="@+id/specificationTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/priceTextView"
-            android:text="Quantity: 0" />
+            android:layout_below="@+id/descriptionText"
+            android:text="Specification: N/A" />
+
     </RelativeLayout>
-</androidx.cardview.widget.CardView>
+

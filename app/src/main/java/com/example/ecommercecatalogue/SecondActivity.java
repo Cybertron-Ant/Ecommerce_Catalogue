@@ -6,7 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity implements OnItemClickListener {
 
     /*public static int imageResourceId;
     public static String  productName;
@@ -71,5 +71,11 @@ public class SecondActivity extends AppCompatActivity {
         }
         return null; // Return null if the product with the given ID is not found
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        // get position of all elements in 'product' array
+        Product product = MainActivity.generateSampleData().get(position);
     }
 }

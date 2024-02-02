@@ -7,17 +7,27 @@ public class Product {
     private int imageResourceId;
     private String productName;
 
+    private String productDescription;
+
     private double itemPrice; // Add Item Price
     private int itemQuantity; // Add Item Quantity
 
     // initialize 'imageResourceId' & 'productName' class properties
-    public Product(int imageResourceId, String productName, double itemPrice, int itemQuantity, int ID) {
+
+    public Product(int ID, int imageResourceId, String productName, String productDescription, double itemPrice, int itemQuantity) {
+        this.ID = ID;
         this.imageResourceId = imageResourceId;
         this.productName = productName;
+        this.productDescription = productDescription;
         this.itemPrice = itemPrice;
         this.itemQuantity = itemQuantity;
-        this.ID = ID;
-    }// end 'Product' constructor
+    }
+    // end 'Product' constructor
+
+
+    public String getProductDescription() {
+        return productDescription;
+    }
 
     public int getID() {
         return ID;

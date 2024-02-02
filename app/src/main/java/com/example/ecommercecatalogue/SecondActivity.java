@@ -1,5 +1,6 @@
 package com.example.ecommercecatalogue;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -77,5 +78,8 @@ public class SecondActivity extends AppCompatActivity implements OnItemClickList
     public void onItemClick(int position) {
         // get position of all elements in 'product' array
         Product product = MainActivity.generateSampleData().get(position);
+
+        // navigate to ProductView from SecondActivity.java
+        Intent intent = new Intent(SecondActivity.this, ProductView.class);
     }
 }

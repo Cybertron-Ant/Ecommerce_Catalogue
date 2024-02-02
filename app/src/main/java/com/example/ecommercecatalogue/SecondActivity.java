@@ -85,5 +85,6 @@ public class SecondActivity extends AppCompatActivity implements OnItemClickList
         //
         intent.putExtra("Product Description", product.getProductDescription());
         intent.putExtra("Product Specification", product.getProductSpecification());
+        intent.putExtra("Product Image", product.getImageResourceId());
     }
 }

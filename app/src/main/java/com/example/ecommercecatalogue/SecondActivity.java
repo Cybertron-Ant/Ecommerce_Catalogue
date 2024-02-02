@@ -83,6 +83,7 @@ public class SecondActivity extends AppCompatActivity implements OnItemClickList
         Intent intent = new Intent(SecondActivity.this, ProductView.class);
 
         //
-        intent.putExtra("Product Description");
+        intent.putExtra("Product Description", product.getProductDescription());
+        intent.putExtra("Product Specification", product.getProductSpecification());
     }
 }

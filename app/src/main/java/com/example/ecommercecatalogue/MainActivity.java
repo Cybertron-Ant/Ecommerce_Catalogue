@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     }
     public static List<Product> generateSampleData () {
         List<Product> productList = new ArrayList<>();
-        productList.add(new Product(R.drawable.photo1, "Product 1", 19.99, 50, "Product 1 Description",1));
-        productList.add(new Product(R.drawable.photo2, "Product 2", 29.99, 30, "Product 2 Description",2));
-        productList.add(new Product(R.drawable.photo3, "Product 3", 39.99, 20, "Product 3 Description",3));
-        productList.add(new Product(R.drawable.photo4, "Product 4", 49.99, 10, "Product 4 Description",4));
-        productList.add(new Product(R.drawable.photo5, "Product 5", 59.99, 5, "Product 5 Description",5));
-        productList.add(new Product(R.drawable.photo6, "Product 6", 69.99, 25, "Product 6 Description",6));
-        productList.add(new Product(R.drawable.photo7, "Product 7", 79.99, 15, "Product 7 Description",7));
-        productList.add(new Product(R.drawable.photo8, "Product 8", 89.99, 12, "Product 8 Description",8));
+        productList.add(new Product(R.drawable.photo1, "Product 1", 19.99, 50, "Product 1 Description",1, "Product 1 Specification"));
+        productList.add(new Product(R.drawable.photo2, "Product 2", 29.99, 30, "Product 2 Description",2, "Product 2 Specification"));
+        productList.add(new Product(R.drawable.photo3, "Product 3", 39.99, 20, "Product 3 Description",3, "Product 3 Specification"));
+        productList.add(new Product(R.drawable.photo4, "Product 4", 49.99, 10, "Product 4 Description",4, "Product 4 Specification"));
+        productList.add(new Product(R.drawable.photo5, "Product 5", 59.99, 5, "Product 5 Description",5, "Product 5 Specification"));
+        productList.add(new Product(R.drawable.photo6, "Product 6", 69.99, 25, "Product 6 Description",6, "Product 6 Specification"));
+        productList.add(new Product(R.drawable.photo7, "Product 7", 79.99, 15, "Product 7 Description",7, "Product 7 Specification"));
+        productList.add(new Product(R.drawable.photo8, "Product 8", 89.99, 12, "Product 8 Description",8, "Product 8 Specification"));
 
         return productList;
     }

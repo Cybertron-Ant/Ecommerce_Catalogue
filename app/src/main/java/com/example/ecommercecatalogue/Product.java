@@ -9,21 +9,28 @@ public class Product {
 
     private String productDescription;
 
+    private String productSpecification;
+
     private double itemPrice; // Add Item Price
     private int itemQuantity; // Add Item Quantity
 
     // initialize 'imageResourceId' & 'productName' class properties
 
-    public Product(int imageResourceId, String productName, double itemPrice, int itemQuantity, String productDescription, int ID) {
+    public Product(int imageResourceId, String productName, double itemPrice, int itemQuantity, String productDescription, int ID, String productSpecification) {
         this.ID = ID;
         this.imageResourceId = imageResourceId;
         this.productName = productName;
         this.productDescription = productDescription;
         this.itemPrice = itemPrice;
         this.itemQuantity = itemQuantity;
+        this.productSpecification = productSpecification;
     }
     // end 'Product' constructor
 
+
+    public String getProductSpecification() {
+        return productSpecification;
+    }
 
     public String getProductDescription() {
         return productDescription;

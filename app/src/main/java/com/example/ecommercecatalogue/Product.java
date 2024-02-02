@@ -14,7 +14,7 @@ public class Product {
 
     // initialize 'imageResourceId' & 'productName' class properties
 
-    public Product(int ID, int imageResourceId, String productName, String productDescription, double itemPrice, int itemQuantity) {
+    public Product(int imageResourceId, String productName, double itemPrice, int itemQuantity, String productDescription, int ID) {
         this.ID = ID;
         this.imageResourceId = imageResourceId;
         this.productName = productName;

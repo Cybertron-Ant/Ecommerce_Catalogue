@@ -23,5 +23,15 @@ public class ProductView extends AppCompatActivity {
         descriptionText = findViewById(R.id.descriptionText);
         specificationTextView = findViewById(R.id.specificationTextView);
 
+        // retrieve and display product details in ProductView | declare activity in manifest file
+        int image = getIntent().getIntExtra("Product Image", R.drawable.ic_launcher_background);
+        String description = getIntent().getStringExtra("Product Description");
+        String specification = getIntent().getStringExtra("Product Specification");
+
+        // retrieve and display product details in ProductView
+        productViewImage.setBackgroundResource(image);
+        descriptionText.setText(description);
+        specificationTextView.setText(specification);
+
     }
 }// end 'ProductView' class
